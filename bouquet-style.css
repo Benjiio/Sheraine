@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Base Layout & Reset
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FCE0DB; /* Soft pastel pink background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px 120px 20px; /* Leave space at the bottom for the home button */
+    overflow-x: hidden;
+}
+
+/* Centers our components neatly on mobile screens */
+.bouquet-container {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ==========================================================================
+   Bouquet Card & Image Scaling (Restored & Locked)
+   ========================================================================== */
+.flower-card {
+    background-color: #FCD0CE; 
+    width: 260px;
+    height: 320px;
+    border-radius: 40px;
+    box-shadow: 0 10px 25px rgba(138, 43, 55, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 15px;
+    overflow: hidden; /* Keeps everything locked inside the card boundaries */
+}
+
+.bouquet-image {
+    max-width: 85%;
+    max-height: 85%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   Love Note Message Cards (Beautiful Rounded Bubbles)
+   ========================================================================== */
+.note-bubble {
+    background-color: #FFFFFF;
+    color: #8A2B37;
+    padding: 16px 24px;
+    border-radius: 50px; /* Perfect clean pill shape */
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(138, 43, 55, 0.04);
+    line-height: 1.4;
+    border: 1px solid rgba(252, 208, 206, 0.2);
+}
+
+/* ==========================================================================
+   Round White Home Button UI
+   ========================================================================== */
+.home-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65px;
+    height: 65px;
+    background-color: #FFFFFF;
+    color: #E26D7D;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(138, 43, 55, 0.12);
+    transition: all 0.2s ease;
+    z-index: 100;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.home-btn:active {
+    transform: translateX(-50%) scale(0.92);
+    background-color: #FFF0EF;
+}

@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Base Setup & Reset
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FCE0DB; /* Matching hallmark signature pastel pink */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 120px 20px;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   ✨ Sleek Geometric Outer Frame Board Design ✨
+   ========================================================================== */
+.plans-container-frame {
+    width: 100%;
+    max-width: 720px;
+    padding: 45px 30px;
+    text-align: center;
+    position: relative;
+    border-radius: 28px;
+    
+    /* Clean geometric outline aesthetic */
+    background-color: #FFF9F6; /* Soft antique paper white board backing */
+    border: 2px dashed rgba(138, 43, 55, 0.2);
+    outline: 10px solid rgba(255, 255, 255, 0.5);
+    outline-offset: -16px;
+    
+    box-shadow: 0 20px 50px rgba(138, 43, 55, 0.06);
+}
+
+/* Titles Styling */
+.plans-main-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.3rem;
+    color: #8A2B37;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.plans-subtitle {
+    font-size: 0.9rem;
+    color: #BA6B75;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   The 3-Card Grid Configuration
+   ========================================================================== */
+.cards-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Individual Plan Mini Cards */
+.plan-mini-card {
+    background-color: #FFFDFB;
+    flex: 1;
+    padding: 35px 15px;
+    border-radius: 16px;
+    border: 1px solid rgba(252, 208, 206, 0.5);
+    box-shadow: 0 8px 20px rgba(138, 43, 55, 0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.25s ease;
+}
+
+.plan-mini-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-heart-icon {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+    opacity: 0.8;
+}
+
+.card-heading {
+    font-family: 'Georgia', serif;
+    font-size: 1.25rem;
+    color: #8A2B37;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.card-subtext {
+    font-size: 0.95rem;
+    color: #4A2E31;
+    line-height: 1.5;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Round White Navigation Home Button UI
+   ========================================================================== */
+.home-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65px;
+    height: 65px;
+    background-color: #FFFFFF;
+    color: #E26D7D;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(138, 43, 55, 0.12);
+    transition: all 0.2s ease;
+    z-index: 100;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.home-btn:active {
+    transform: translateX(-50%) scale(0.92);
+    background-color: #FFF0EF;
+}
+
+/* ==========================================================================
+   Responsive Viewport Stack Logic (Flawless on Phones!)
+   ========================================================================== */
+@media (max-width: 680px) {
+    body {
+        padding: 20px 15px 110px 15px;
+    }
+
+    .plans-container-frame {
+        padding: 35px 20px;
+        outline-width: 6px;
+        outline-offset: -12px;
+    }
+
+    .plans-main-title {
+        font-size: 1.9rem;
+    }
+
+    /* Convert row into vertical stack block format on narrow phone touchscreens */
+    .cards-grid {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .plan-mini-card {
+        padding: 25px 15px;
+        width: 100%;
+    }
+    
+    .card-heading {
+        margin-bottom: 12px;
+    }
+}

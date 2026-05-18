@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Base Clean Setup
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FCE0DB; /* Matching signature pastel pink backdrop */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 15px 120px 15px;
+    overflow-x: hidden;
+}
+
+/* 🌟 Modified container to be absolute-anchor relative for corner anchors */
+.gallery-wrapper {
+    width: 100%;
+    max-width: 900px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Anchor point for corner elements */
+}
+
+/* ==========================================================================
+   ✨ Floating Corner Text Typography Styling
+   ========================================================================== */
+.corner-text {
+    position: absolute;
+    color: #8A2B37;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: italic;
+    opacity: 0.85;
+    user-select: none;
+    z-index: 10;
+}
+
+/* Positioning rules to stick them exactly on opposite corners */
+.top-left {
+    top: 10px;
+    left: 15px;
+}
+
+.bottom-right {
+    bottom: -40px;
+    right: 15px;
+}
+
+/* ==========================================================================
+   Scattered Workspace Layout
+   ========================================================================== */
+.photo-space {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    margin-top: 40px; /* Gives top-left option breathing room */
+}
+
+/* Standard Single Polaroid Frame */
+.polaroid-frame {
+    background-color: #FFFFFF;
+    padding: 12px 12px 35px 12px;
+    box-shadow: 0 8px 20px rgba(138, 43, 55, 0.08);
+    border-radius: 4px;
+    width: 180px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.photo-slot {
+    width: 100%;
+    height: 160px;
+    background-color: #EFEFEF;
+    overflow: hidden;
+}
+
+.photo-slot img, .strip-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Absolute coordinates for scattered look */
+.p-left {
+    transform: rotate(-12deg);
+    top: 40px;
+}
+
+.p-right {
+    transform: rotate(10deg);
+    top: 20px;
+}
+
+/* Cute hand-drawn text accent indicator */
+.heart-arrow {
+    position: absolute;
+    bottom: -45px;
+    right: -50px;
+    color: #8A2B37;
+    font-size: 1.1rem;
+    font-style: italic;
+    white-space: nowrap;
+    transform: rotate(5deg);
+}
+
+.heart-arrow::before {
+    content: '➔';
+    display: inline-block;
+    transform: rotate(-130deg) scaleY(-1);
+    margin-right: 5px;
+}
+
+/* Vertical Filmstrip Elements */
+.photo-strip {
+    background-color: #FFFFFF;
+    padding: 10px;
+    box-shadow: 0 10px 25px rgba(138, 43, 55, 0.09);
+    width: 115px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.strip-1 {
+    transform: rotate(-3deg);
+    margin-top: -10px;
+}
+
+.strip-2 {
+    transform: rotate(4deg);
+    margin-top: 15px;
+}
+
+.strip-photo {
+    width: 100%;
+    height: 125px;
+    background-color: #EFEFEF;
+}
+
+/* ==========================================================================
+   Round White Navigation Home Button UI
+   ========================================================================== */
+.home-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65px;
+    height: 65px;
+    background-color: #FFFFFF;
+    color: #E26D7D;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(138, 43, 55, 0.12);
+    transition: all 0.2s ease;
+    z-index: 1000;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.home-btn:active {
+    transform: translateX(-50%) scale(0.92);
+    background-color: #FFF0EF;
+}
+
+/* ==========================================================================
+   Mobile-Responsive Grid Adjustment (Flawless on Phones!)
+   ========================================================================== */
+@media (max-width: 700px) {
+    .photo-space {
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .polaroid-frame, .photo-strip {
+        position: static;
+        margin: 0 !important;
+    }
+    
+    .p-left { transform: rotate(-5deg); }
+    .p-right { transform: rotate(5deg); }
+    .strip-1 { transform: rotate(-2deg); }
+    .strip-2 { transform: rotate(2deg); }
+
+    .heart-arrow {
+        display: none; 
+    }
+
+    /* Move bottom phrase text slightly higher so the home button doesn't hide it on phones */
+    .bottom-right {
+        bottom: -20px;
+    }
+}

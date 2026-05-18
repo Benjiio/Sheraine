@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Base Canvas Reset
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #FCE0DB; /* Signature aesthetic pastel pink */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 120px 20px;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   ✨ Modern Aesthetic Geometric Outer Frame Container ✨
+   ========================================================================== */
+.letter-frame-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px; 
+    position: relative;
+    border-radius: 24px;
+    
+    /* Clean double border lines with a slight translucent white gloss backdrop */
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 2px dashed rgba(138, 43, 55, 0.25); 
+    outline: 8px solid rgba(255, 255, 255, 0.4); 
+    outline-offset: -14px;
+    
+    box-shadow: 0 20px 45px rgba(138, 43, 55, 0.06);
+}
+
+/* ==========================================================================
+   The Letter Card Presentation Box
+   ========================================================================== */
+.parchment-card {
+    background-color: #FFF9F6; /* Clean antique ivory color */
+    width: 100%;
+    padding: 45px 35px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(138, 43, 55, 0.05);
+    border: 1px solid rgba(253, 208, 206, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typography Details */
+.letter-salutation {
+    font-size: 1.8rem;
+    color: #6B1D27;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.letter-body {
+    font-size: 1.05rem;
+    color: #4A2E31;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.letter-body p {
+    margin-bottom: 6px;
+}
+
+.letter-body .paragraph-break {
+    margin-top: 24px;
+}
+
+/* Closing Signatures */
+.letter-closing {
+    align-self: flex-end;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 10px;
+}
+
+.sign-off {
+    font-size: 1.1rem;
+    color: #6B1D27;
+    font-style: italic;
+}
+
+.signature {
+    font-size: 1.2rem;
+    color: #6B1D27;
+    font-weight: 500;
+    font-style: italic;
+    margin-top: 4px;
+    margin-left: 12px;
+}
+
+/* ==========================================================================
+   Round Home Button UI
+   ========================================================================== */
+.home-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65px;
+    height: 65px;
+    background-color: #FFFFFF;
+    color: #E26D7D;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(138, 43, 55, 0.12);
+    transition: all 0.2s ease;
+    z-index: 100;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.home-btn:active {
+    transform: translateX(-50%) scale(0.92);
+    background-color: #FFF0EF;
+}
+
+/* ==========================================================================
+   Mobile Scaling
+   ========================================================================== */
+@media (max-width: 480px) {
+    body {
+        padding: 20px 12px 110px 12px;
+    }
+
+    .letter-frame-container {
+        padding: 14px;
+        outline-width: 6px;
+        outline-offset: -10px;
+    }
+
+    .parchment-card {
+        padding: 35px 20px;
+    }
+
+    .letter-salutation {
+        font-size: 1.6rem;
+    }
+
+    .letter-body {
+        font-size: 0.98rem;
+        line-height: 1.6;
+    }
+}

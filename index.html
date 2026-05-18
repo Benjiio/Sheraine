@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Made Just For You</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="intro-screen" class="intro-overlay">
+        
+        <div class="floating-hearts-bg">
+            <span class="bubble-heart">💖</span>
+            <span class="bubble-heart">💕</span>
+            <span class="bubble-heart">💗</span>
+            <span class="bubble-heart">✨</span>
+            <span class="bubble-heart">💝</span>
+            <span class="bubble-heart">✨</span>
+        </div>
+
+        <div class="lace-bottom"></div>
+
+        <div class="intro-content">
+            <img src="cat.png" alt="Special Character" class="intro-photo">
+            
+            <p class="greeting-text">Hey Lovee</p>
+            <h2 class="question-text">Do you want to see this?</h2>
+
+            <div class="button-group">
+                <button class="btn btn-yes" onclick="revealMainPage()">YES PLEASE</button>
+                <button class="btn btn-no" onclick="alert('Oh come on, you know you want to look! 😉')">NO THANKS</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main-wrapper">
+
+        <div class="corner-decor top-left">🌸</div>
+        <div class="corner-decor top-right">✨</div>
+        <div class="corner-decor bottom-left">✨</div>
+        <div class="corner-decor bottom-right">💖</div>
+
+        <header class="header-container fade-in">
+            <h1>Made just for you</h1>
+            <p>Because i love you 💖</p>
+        </header>
+
+        <main class="grid-container">
+            <div class="card fade-in" onclick="window.location.href='camera-page.html'">
+                <div class="icon-wrapper">
+                    <img src="polaroid.png" alt="our pics" class="card-image">
+                </div>
+            </div>
+
+          <div class="card fade-in" onclick="window.location.href='letter-page.html'">
+                <div class="icon-wrapper">
+                    <img src="loveee.png" alt="our pics" class="card-image">
+                </div>
+            </div>
+
+             <div class="card fade-in" onclick="window.location.href='plans-page.html'">
+                <div class="icon-wrapper">
+                    <img src="lovejour.png" alt="Flowers for you" class="card-image">
+                </div>
+            </div>
+
+            <div class="card fade-in" onclick="window.open('bouquet-page.html', '_self')">
+                <div class="icon-wrapper">
+                    <img src="flowir 1.png" alt="Flowers for you" class="card-image">
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script>
+        function revealMainPage() {
+            const intro = document.getElementById('intro-screen');
+            intro.style.opacity = '0';
+            intro.style.pointerEvents = 'none';
+            setTimeout(() => {
+                intro.style.display = 'none';
+            }, 600);
+        }
+    </script>
+</body>
+</html>
